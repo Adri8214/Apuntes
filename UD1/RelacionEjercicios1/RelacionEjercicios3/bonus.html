@@ -1,0 +1,21 @@
+<script>
+
+    //Introducimos por teclado el salario anual del usuario
+    let salarioAnual = Number(prompt("Introduzca su salario anual: "))
+    let tipoReal  
+
+    //En función del salario anual se calculará cuanto porcentaje se le descontará
+    if(salarioAnual < 10000){
+        console.log(0);
+    } else if(salarioAnual >= 10000 && salarioAnual <= 20000){
+        tipoReal = (salarioAnual * 10) / 100
+        console.log("Al usuario le retendrán de su cuenta un total de " + tipoReal + " €");
+    } else if(salarioAnual >= 20000 && salarioAnual <= 40000){
+        tipoReal = (salarioAnual * 20) / 100
+        console.log("Al usuario le retendrán de su cuenta un total de " + tipoReal + " €");
+    } else if(salarioAnual > 40000){
+        tipoReal = (salarioAnual * 30) / 100
+        console.log("Al usuario le retendrán de su cuenta un total de " + tipoReal + " €");
+    }
+
+</script>

@@ -1,0 +1,28 @@
+<script>
+
+    let edad = Number(prompt("Introduce la edad del usuario: "))
+
+    if(isNaN(edad) || edad < 0){
+        console.log("Introduce un número válido");
+    } else if(edad < 12){
+        console.log("Entrada gratuita");
+        if (edad < 5) {
+            console.log("Debe ir acompañado de un adulto");
+        }
+    } else if(edad >= 12 && edad <= 17){
+        console.log("Entrada reducida (5€)");
+    } else if(edad >= 18 && edad <= 64){
+        console.log("Entrada general (10€)");
+    } else if(edad >= 65){
+        console.log("Entrada reducida (4€)");
+        
+    } else{
+         console.log("Entrada gratuita por cortesía");
+
+    }
+
+
+
+
+
+</script>

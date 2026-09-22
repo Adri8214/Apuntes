@@ -1,0 +1,55 @@
+<script>
+
+    // Escribe un programa que gestione las puntuaciones de los jugadores en un videojuego utilizando dos arrays:
+    // uno para los nombres de los jugadores y otro para sus respectivas puntuaciones. El programa debe funcionar de la siguiente manera:
+
+    // **Crea dos arrays**:
+
+    // 1. Uno para almacenar los nombres de los últimos 5 jugadores.
+    // 2. Otro para almacenar las puntuaciones correspondientes de esos jugadores.
+
+    //El programa debe mostrar un menú con las siguientes opciones:
+
+    //1. Añadir un nuevo jugador y su puntuación**: El usuario debe poder ingresar el nombre del jugador y su puntuación. 
+    //La información del jugador más antiguo (el primer elemento de ambos arrays) debe ser eliminada y los nuevos datos deben añadirse al final de ambos arrays.
+    //2. Mostrar los jugadores y sus puntuaciones actuales**: Se deben mostrar los nombres de los jugadores junto con sus respectivas puntuaciones.
+   //3. Salir del programa**: Terminar la ejecución del programa.
+
+    let nombresJugadores = ["Jugador1", "Jugador2", "Jugador3", "Jugador4", "Jugador5"]
+    let puntuacionesJugadores = [100, 90, 30, 200, 124]
+    let nuevoJugador
+    let nuevaPuntuacion
+    let opcionMenu = 0
+    let mensaje
+
+    while (opcionMenu != 3) {
+        opcionMenu = Number(prompt("Introduce una opción del menú (1-3): "))
+
+        if (opcionMenu == 1) {
+
+            nuevoJugador = prompt("Introduce el nombre del nuevo jugador: ")
+            nuevaPuntuacion = Number(prompt("Introduce su correspondiente puntuación: "))
+
+            nombresJugadores.shift()
+            nombresJugadores.push(nuevoJugador)
+                
+            puntuacionesJugadores.shift()
+            puntuacionesJugadores.push(nuevaPuntuacion)
+            
+        } else if (opcionMenu == 2) {
+
+            mensaje = ""
+
+            for (let i = 0; i < nombresJugadores.length; i++) {
+                mensaje += (i + 1) + ". " + nombresJugadores[i] + " - " + puntuacionesJugadores[i] + " \n" 
+            }
+            alert(mensaje)
+        } else if (opcionMenu == 3) {
+            alert("El programa ha finalizado")
+        } else {
+            alert("Introduce una opción válida")
+        }
+    }
+
+
+</script>

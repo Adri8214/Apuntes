@@ -1,0 +1,30 @@
+<script>
+
+    //Crea una función llamada filtrarNumerosMayores que reciba un array de números y un valor, 
+    // y devuelva un nuevo array con los números mayores que el valor dado.
+
+    function filtrarNumerosMayores(arrayNumeros, valor) {
+        let numerosMayores = []
+
+        for (let i = 0; i < arrayNumeros.length; i++) {
+            if (arrayNumeros[i] > valor) {
+                numerosMayores.push(arrayNumeros[i])
+            }
+        }
+
+        return numerosMayores
+    }
+
+    // ----------------------- MAIN -------------------------
+
+    let numeros = []
+    const NUMEROS_ARRAY = 5
+    
+    for (let i = 1; i <= NUMEROS_ARRAY; i++) {
+        numeros.push(10 * i)
+    }
+
+    alert(numeros)
+    alert(filtrarNumerosMayores(numeros, 30))
+
+</script>

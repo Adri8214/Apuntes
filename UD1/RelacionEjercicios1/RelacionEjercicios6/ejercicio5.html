@@ -1,0 +1,31 @@
+<script>
+
+    let temperatura = 0
+    let dia = 0
+    let media = 0
+    let sumatorio = 0
+    while(dia != 7){
+        dia++
+        temperatura = parseFloat(prompt("Introduce la temperatura del día " + dia + ":"))
+
+
+        if (temperatura <-20 || temperatura > 50) {
+            console.log("Temperatura incorrecta.Debe de estar entre -20 y 50");
+            dia--
+            continue;
+        }
+
+        sumatorio += temperatura
+        media = sumatorio / dia
+
+        console.log("Introduce la temperatura del día " + dia + ": " + temperatura);        
+        
+    }
+
+        console.log("La temperatura media de la semana es: " + media.toFixed(2));
+
+
+
+
+
+</script>

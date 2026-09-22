@@ -1,0 +1,77 @@
+<script>
+
+    // Escribe un programa que permita al usuario ingresar las temperaturas registradas durante una semana (7 días).
+    // Una vez ingresadas las temperaturas, el programa debe mostrar al usuario un menú con las siguientes opciones:
+    // 1. Mostrar la temperatura más alta registrada.
+    // 2. Mostrar la temperatura más baja registrada.
+    // 3. Calcular la temperatura promedio de la semana.
+    // 4. Salir del programa.
+
+    const DIAS_SEMANA = 7
+    let temperaturas = []
+    let introducirTemperatura
+    let opcion = ""
+    let temperaturaMasAlta
+    let temperaturaMasBaja
+    let temperaturaPromedio = 0
+    let sumatorio
+
+    for (let i = 0; i < DIAS_SEMANA; i++) {
+
+        introducirTemperatura = Number(prompt("Introduce una temperatura: "))
+
+        while (isNaN(introducirTemperatura)) {
+            introducirTemperatura = Number(prompt("Introduce una temperatura: "))
+        }
+
+        temperaturas.push(introducirTemperatura)
+
+    }
+
+    alert(temperaturas)
+
+    temperaturaMasAlta = temperaturas[0]
+    temperaturaMasBaja = temperaturas[0]
+
+    while (opcion != 4) {
+        opcion = Number(prompt("Introduce una opción del menú (1-4)"))
+
+        if (opcion == 1) {
+
+            for (let i = 0; i < temperaturas.length; i++) {
+                if (temperaturas[i] > temperaturaMasAlta) {
+                    temperaturaMasAlta = temperaturas[i]
+                }
+            }
+
+            alert("La temperatura más alta es de " + temperaturaMasAlta + " grados")
+
+        } else if (opcion == 2) {
+
+            for (let i = 0; i < temperaturas.length; i++) {
+                if (temperaturas[i] < temperaturaMasBaja) {
+                    temperaturaMasBaja = temperaturas[i]
+                }
+            }
+
+            alert("La temperatura más baja es de " + temperaturaMasBaja + " grados")
+
+        } else if (opcion == 3) {
+
+            sumatorio = 0
+
+            for (let i = 0; i < DIAS_SEMANA; i++) {
+                sumatorio += temperaturas[i]
+                temperaturaPromedio = sumatorio / temperaturas.length
+            }
+
+            alert("La temperatura promedio es de " + temperaturaPromedio.toFixed(2) + " grados")
+
+        } else if (opcion == 4) {
+            alert("Programa finalizado")
+        } else {
+            alert("Opción no válida")
+        }
+    }
+
+</script>

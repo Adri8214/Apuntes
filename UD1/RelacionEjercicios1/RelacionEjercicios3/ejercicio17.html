@@ -1,0 +1,22 @@
+<script>
+
+//REVISAR 
+   let duracionLlamada = Number(prompt("Introduce el número de minutos que ha durado la llamada")) 
+   let coste
+   let precio
+   if(duracionLlamada == 3){
+     coste = 0
+        console.log("La llamada es gratis");
+   } else if(duracionLlamada >= 3 && duracionLlamada <= 10){
+     coste = 0.50
+     precio = (duracionLlamada - 3) * coste
+        console.log("La llamada cuesta: " + precio + " €");
+   } else if(duracionLlamada > 10){
+     coste = 0.30
+     precio = (7 * 0.50) + ((duracionLlamada - 10) * 0.30)
+        console.log("La llamada cuesta: " + precio + " €");
+   } else{
+        console.log("El número introducido no es válido");
+   }
+
+</script>

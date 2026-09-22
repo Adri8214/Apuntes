@@ -1,0 +1,29 @@
+<script>
+
+    //Crea una función llamada promedioArray que reciba un array de números y devuelva su promedio.
+
+    function promedioArray(arrayNumeros) {
+        let promedio = 0
+        let sumatorio = 0
+        let longitudArray = arrayNumeros.length
+
+        for (const elemento of arrayNumeros) {
+            sumatorio += elemento
+            promedio = sumatorio / longitudArray
+        }
+
+        return promedio
+    }
+
+    // ----------------- MAIN ------------------
+
+    let numeros = []
+    const NUMEROS_ARRAY = 3
+    for (let i = 1; i <= NUMEROS_ARRAY; i++) {
+        numeros.push(10 * i)
+    }
+
+    alert(numeros)
+    alert(promedioArray(numeros))
+
+</script>

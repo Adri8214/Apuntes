@@ -1,0 +1,17 @@
+<script>
+
+    //Introducimos por teclado el salario anual del usuario
+    let salarioAnual = Number(prompt("Introduce el salario anual del usuario: "))
+    
+    //En función de su salario anual se indicará el porcentaje de impuestos que debe pagar
+    if(salarioAnual < 10000){
+        console.log("Tiene que pagar un total de 0 impuestos");
+    } else if(salarioAnual >= 10000 && salarioAnual <= 20000){
+        console.log("Tiene que pagar total de " + (salarioAnual * 10) / 100 + " impuestos");
+    } else if(salarioAnual > 20000 && salarioAnual <= 40000){
+        console.log("Tiene que pagar un total de " + (salarioAnual * 20) / 100 + " de impuestos");
+    } else if(salarioAnual > 40000){
+        console.log("Tiene que pagar un total de " + (salarioAnual * 30) / 100 + " de impuestos");
+    }
+
+</script>

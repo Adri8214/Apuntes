@@ -1,0 +1,62 @@
+<script>
+
+    let tituloLibros = ["Romancero Gitano", "El señor de los anillos", "El cuervo"]
+    let cantidadDisponible = [5, 2, 10]
+    let nuevoLibro
+    let cantidadNuevoLibro
+    let indice
+    let cantidadActualizada
+    let opcionMenu = 0
+
+    while (opcionMenu != 4) {
+        alert("--- MENU ---\n" + 
+        "1.Añadir un nuevo libro al inventario (con su titulo y cantidad)\n" +
+        "2.Actualizar la cantidad de un libro existente\n" +
+        "3.Ver el inventario completo (titulo y cantidad de cada libro)\n" + 
+        "4.Salir del programa")
+
+        opcionMenu = Number(prompt("Introduce una opcion del menu 1-4"))
+
+        if (opcionMenu < 0 || opcionMenu > 4 || isNaN(opcionMenu)) {
+            alert("Se debe de introducir un numero del 1 al 4")
+        }else{
+            if (opcionMenu == 1) {
+                nuevoLibro = prompt("Introduce el titulo del nuevo libro")
+                cantidadNuevoLibro = Number(prompt("Introduce la cantidad disponible del nuevo libro"))
+                    
+                tituloLibros.push(nuevoLibro)
+                cantidadDisponible.push(cantidadNuevoLibro)
+                    
+                
+            }else if (opcionMenu == 2) {
+                libroExistente = prompt("Introduce el titulo del libro que deseas actualizar")
+                
+                indice = tituloLibros.indexOf(libroExistente)
+
+                if (indice < 0) {
+                    alert("Este libro no existe en el inventario")
+                }else{
+                cantidadActualizada = Number(prompt("Introduce la cantidad actualizada del libro"))
+                    if (cantidadActualizada < 0 || isNaN(cantidadActualizada)) {
+                        alert("Cantidad invalida")
+                    }else{
+                        cantidadDisponible[indice] = cantidadActualizada
+                        alert("Cantidad actualizada: " + tituloLibros[indice] + " ahora tiene " + cantidadActualizada + " unidades")
+                    }
+                }
+                
+            }else if (opcionMenu == 3) {
+                for (let i = 0; i < tituloLibros.length; i++) {
+                    console.log(tituloLibros[i] + ": " + cantidadDisponible[i]);
+                }
+            }else{
+                alert("El programa ha finalizado")
+            }
+        }
+    }
+
+
+
+
+
+</script>

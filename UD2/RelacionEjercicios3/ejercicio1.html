@@ -1,0 +1,14 @@
+<script>
+
+    let palabras = ["apple", "banana", "kiwi", "watermelon"]
+    let palabraMasLarga = ""
+
+    for (let i = 0; i < palabras.length; i++) {
+        if (palabras[i].length > palabraMasLarga.length) {
+            palabraMasLarga = palabras[i]
+        }
+    }
+
+    alert("La palabra mas larga es " + palabraMasLarga)
+
+</script>

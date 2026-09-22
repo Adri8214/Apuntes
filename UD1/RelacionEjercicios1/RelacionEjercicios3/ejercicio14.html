@@ -1,0 +1,18 @@
+<script>
+
+    //Ingresamos la temperatura por teclado
+    let temperatura = Number(prompt("Introduce la temperatura actual"))
+
+    //En función de la temperatura indicará si es "Muy frio", "Frio", "Templado" o "Caliente"
+    if(temperatura < 0){
+        console.log("Muy frío");
+    } else if(temperatura >= 0 && temperatura <= 15){
+        console.log("Frío");
+    } else if(temperatura >= 16 && temperatura <= 25){
+        console.log("Templado");
+    } else {
+        console.log("Caliente");
+    }
+
+
+</script>

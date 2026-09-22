@@ -1,0 +1,41 @@
+<script>
+    //CONTINUAR Y CORREGIR FALLOS
+    let nombreTareas = []
+    let estadoTarea = []
+
+    let opcionMenu = 0
+    let nuevaTarea
+
+    while (opcionMenu != 5) {
+        
+        alert("--- MENU ---" +
+            "1.Añadir una nueva tarea\n" + 
+            "2.Marcar una tarea como completada\n" +
+            "3.Ver la lista de tareas pendientes\n" +
+            "4.Ver la lista de tareas completadas\n" +
+            "5.Salir del programa"
+        )
+
+        opcionMenu = Number(prompt("Introduce una opcion del 1-5"))
+
+        if (opcionMenu < 1 || opcionMenu > 5 || isNaN(opcionMenu)) {
+            alert("Debes de introducir un valor entre 1 y 5")
+        }
+
+        if (opcionMenu == 1) {
+            nuevaTarea = prompt("Introduce una nueva tarea")
+
+            nombreTareas.push(nuevaTarea)
+            alert("Tarea añadida correctamente")
+
+        }else if (opcionMenu == 2) {
+            
+        }
+    }
+
+
+
+
+
+
+</script>

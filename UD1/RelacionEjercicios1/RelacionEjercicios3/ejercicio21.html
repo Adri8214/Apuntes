@@ -1,0 +1,20 @@
+<script>
+
+    //Introducimos el peso y la altura del usuario por teclado
+    let peso = Number(prompt("Introduce el peso del usuario: "))
+    let altura = parseFloat(prompt("Introduce la altura del usuario: "))
+    //Calculamos el imc del usuario
+    let imc = parseFloat(peso / (altura * altura))
+    
+    //En función del imc lo clasificaremos según "Bajo peso", "Normal", "Sobrepeso" u "Obesidad" 
+    if(imc < 18.5){
+        console.log("Bajo peso");
+    } else if(imc >= 18.5 && imc <= 24.9){
+        console.log("Normal");
+    } else if(imc >= 25 && imc <= 29.9){
+        console.log("Sobrepeso");
+    } else{
+        console.log("Obesidad");
+    }
+
+</script>

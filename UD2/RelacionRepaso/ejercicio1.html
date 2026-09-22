@@ -1,0 +1,68 @@
+<script>
+
+    let puntuaciones = [5, 2, 4, 7, 1, 3, 9, 8, 0, 10]
+
+    let opcionesMenu = 0
+    let puntuacionMasAlta = puntuaciones[0]
+    let puntuacionMasBaja = puntuaciones[0]
+    let sumatorio = 0
+    let media = 0
+    
+
+    while (opcionesMenu != 5) {
+    
+        alert("--- MENU ---\n" +
+        "1.Mostrar la puntuación más alta\n" +
+        "2.Mostrar la puntuación más baja\n" +
+        "3.Calcular la puntuación total\n" + 
+        "4.Calcular la media\n" +
+        "5.Salir"        
+        )
+        
+        opcionesMenu = Number(prompt("Introduce un número válido (1-5)"))
+        
+        if (opcionesMenu < 1 || opcionesMenu > 5 || isNaN(opcionesMenu)) {
+            alert("Introduce un número válido")
+        }else{
+            if (opcionesMenu == 1) {
+                for (let i = 0; i < puntuaciones.length; i++) {
+                   if (puntuaciones[i] > puntuacionMasAlta) {
+                    puntuacionMasAlta = puntuaciones[i]
+                   } 
+                }
+                alert("La puntuación más alta es " + puntuacionMasAlta)
+
+            }else if (opcionesMenu == 2) {
+                for (let i = 0; i < puntuaciones.length; i++) {
+                   if (puntuaciones[i] < puntuacionMasBaja) {
+                    puntuacionMasBaja = puntuaciones[i]
+                   } 
+                }
+                alert("La puntuacion más baja es " + puntuacionMasBaja)
+
+            }else if (opcionesMenu == 3) {
+                sumatorio = 0
+
+                for (let i = 0; i < puntuaciones.length; i++) {
+                    sumatorio += puntuaciones[i]
+                }
+                alert("La puntuación total es de " + sumatorio)
+
+            }else if (opcionesMenu == 4) {
+                sumatorio = 0
+                for (let i = 0; i < puntuaciones.length; i++) {
+                    sumatorio += puntuaciones[i]
+                }
+
+                media = sumatorio / puntuaciones.length
+                alert("La media es " + media)
+                
+            }else{
+                alert("El programa ha finalizado")
+            }
+        }
+    }
+
+
+
+</script>

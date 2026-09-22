@@ -1,0 +1,44 @@
+<script>
+
+    //REHACER DE NUEVO
+
+    //Desarrolla un programa que gestione las compras en un almacén. Para esto:
+
+    //1. Crea un array que contenga los nombres de 10 productos disponibles en el almacén.
+    //2. Crea otro array que contenga los precios correspondientes a esos 10 productos.
+    //3. El programa debe permitir al usuario realizar una compra solicitando el nombre del producto y la cantidad deseada.
+    //4. El programa debe buscar el precio del producto seleccionado, multiplicarlo por la cantidad y añadirlo al total de la compra.
+    //5. Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los productos adquiridos, sus cantidades, y el costo total a pagar.
+
+    let nombresProductos = ["Lapiz", "Boli", "Cartulina", "Regla", "Borrador", "Tipex", "Pegamento", "Ceras", "Rotuladores", "Fiso"]
+    let preciosProductos = [2, 4, 1, 5, 3, 7, 10, 3, 2, 10]
+    let cantidadProductos
+    let productoDeseado
+    let listaCompra = []
+    let listaCantidadArticulos = []
+    let precioTotal = 0
+    let totalProductos = 0
+    while (productoDeseado != "FIN".toLocaleLowerCase()) {
+        productoDeseado = prompt("Introduce el nombre del producto que deseas comprar:")
+        cantidadProductos = Number(prompt("Introduce la cantidad de productos que deseas comprar: "))
+
+        for (let i = 0; i < nombresProductos.length; i++) {
+
+            if (nombresProductos[i] == productoDeseado) {
+                listaCompra.push(productoDeseado)
+                precioTotal += preciosProductos[i] * cantidadProductos
+            }
+
+
+        }
+        
+        listaCantidadArticulos.push(cantidadProductos)
+    }
+
+     totalProductos += cantidadProductos
+        alert("La lista de la compra quedaría tal que así: \n" +
+              "Lista de artículos: " + listaCompra + "\n" + 
+               "Cantidad de cada artículo: " + listaCantidadArticulos + "\n" + 
+               "Costo total a pagar: " + precioTotal)
+
+</script>

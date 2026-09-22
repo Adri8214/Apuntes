@@ -1,0 +1,15 @@
+<script>
+
+    let longitud1 = Number(prompt("Introduce la primera longitud"))
+    let longitud2 = Number(prompt("Introduce la segunda longitud"))
+    let longitud3 = Number(prompt("Introduce la tercera longitud"))
+
+    if(longitud1 == longitud2 && longitud1 == longitud2 && longitud2 == longitud1 && longitud2 == longitud3 && longitud3 == longitud1 && longitud3 == longitud1){
+        console.log("Triangulo equilatero");
+    } else if(longitud1 == longitud2 && longitud3 != longitud2 && longitud3 !=longitud1 || longitud2 == longitud3 && longitud1 != longitud2 && longitud1 != longitud3 || longitud1 == longitud3 && longitud2 != longitud1 && longitud2 != longitud3){
+        console.log("Triángulo isósceles");
+    } else{
+        console.log("Triángulo escaleno");
+    }
+
+</script>

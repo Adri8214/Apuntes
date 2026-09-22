@@ -1,0 +1,30 @@
+<script>
+
+    //Introducimos la elección del jugador 1 y el jugador 2 
+    let jugador1 = prompt("Introduce Piedra, Papel o Tijera")
+    let jugador2 = prompt("Introduce Piedra, Papel o Tijera")
+
+    //En función de lo que hayan elegido se mostrará un ganador u otro, o empate en el caso de que los dos hayan elegido el mismo resultado
+    if(jugador1 == "Piedra" && jugador2 == "Piedra"){
+        console.log("Empate");
+    } else if(jugador1 == "Piedra" && jugador2 == "Papel"){
+        console.log("Gana jugador 2");
+    } else if(jugador1 == "Piedra" && jugador2 == "Tijera"){
+        console.log("Gana jugador 1");
+    } else if(jugador1 == "Papel" && jugador2 == "Piedra"){
+        console.log("Gana jugador 1");
+    } else if(jugador1 == "Papel" && jugador2 == "Papel"){
+        console.log("Empate");
+    } else if(jugador1 == "Papel" && jugador2 == "Tijera"){
+        console.log("Gana jugador 2");
+    } else if(jugador1 == "Tijera" && jugador2 == "Papel"){
+        console.log("Gana jugador 1");
+    } else if(jugador1 == "Tijera" && jugador2 == "Piedra"){
+        console.log("Gana jugador 2");
+    } else if(jugador1 == "Tijera" && jugador2 == "Tijera"){
+        console.log("Empate");
+    } else{
+        console.log("Introduce una opción válida");
+    }
+
+</script>

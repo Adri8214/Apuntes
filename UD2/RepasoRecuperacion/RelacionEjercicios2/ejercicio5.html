@@ -1,0 +1,92 @@
+<script>
+
+    //Desarrolla un programa que permita registrar y gestionar las calificaciones de los estudiantes en una clase.
+    //Usa dos arrays: uno para los nombres de los estudiantes y otro para sus calificaciones. El programa debe ofrecer al usuario un menú con las siguientes opciones:
+
+    //1. Añadir un estudiante y su calificación.
+    //2. Mostrar la calificación promedio de la clase.
+    //3. Mostrar la calificación más alta y el nombre del estudiante correspondiente.
+    //4. Mostrar la calificación más baja y el nombre del estudiante correspondiente.
+    //5. Salir del programa.
+
+    let nombresEstudiantes = ["Sebas", "Daniel", "Violeta", "Angela", "Lara", "Julio"]
+    let calificacionesEstudiantes = [10, 5, 2, 7, 4, 9]
+    let opcionMenu
+    let nuevoEstudiante
+    let nuevaCalificacion
+    let sumaCalificaciones
+    let calificacionPromedio
+    let calificacionMasAlta = calificacionesEstudiantes[0]
+    let calificacionMasBaja = calificacionesEstudiantes[0]
+    let indiceMasAlta 
+    let indiceMasBaja
+
+    while (opcionMenu != 5) {
+
+        opcionMenu = Number(prompt("Elige una opción del menu (1-5):\n" +
+                                   "1. Añadir un estudiante y su calificación\n" +
+                                   "2. Mostrar la calificación promedio de la clase\n" +
+                                   "3. Mostrar la calificación más alta y el nombre del estudiante correspondiente\n" +
+                                   "4. Mostrar la calificación más baja y el nombre del estudiante correspondiente\n" +
+                                   "5. Salir del programa"))
+
+        if (opcionMenu == 1) {
+
+            nuevoEstudiante = prompt("Introduce el nombre del nuevo estudiante")
+            nuevaCalificacion = Number(prompt("Introduce la calificacion del correspondiente nuevo alumno"))
+
+            nombresEstudiantes.push(nuevoEstudiante)
+            calificacionesEstudiantes.push(nuevaCalificacion)
+        
+        } else if (opcionMenu == 2) {
+
+            sumaCalificaciones = 0
+            
+            for (let i = 0; i < calificacionesEstudiantes.length; i++) {
+                sumaCalificaciones += calificacionesEstudiantes[i]
+                calificacionPromedio = sumaCalificaciones / calificacionesEstudiantes.length
+            }
+
+                alert("La calificacion promedio es de " + calificacionPromedio.toFixed(1))
+
+        } else if (opcionMenu == 3) {
+
+            indiceMasAlta = 0
+            
+            for (let i = 0; i < calificacionesEstudiantes.length; i++) {
+                
+                if (calificacionesEstudiantes[i] > calificacionMasAlta) {
+                    calificacionMasAlta = calificacionesEstudiantes[i]
+                }
+
+                if (calificacionesEstudiantes[i] > calificacionesEstudiantes[indiceMasAlta]) {
+                    indiceMasAlta = i
+                }
+            }
+
+            alert("La calificacion mas alta es de: " + calificacionMasAlta + " puntos y corresponde a " + nombresEstudiantes[indiceMasAlta])
+
+        } else if (opcionMenu == 4) {
+
+            indiceMasBaja = 0
+            
+            for (let i= 0; i < calificacionesEstudiantes.length; i++) {
+                
+                if (calificacionesEstudiantes[i] < calificacionMasBaja) {
+                    calificacionMasBaja = calificacionesEstudiantes[i]
+                }
+
+                if (calificacionesEstudiantes[i] < calificacionesEstudiantes[indiceMasBaja]) {
+                    indiceMasBaja = i
+                }
+            }
+
+            alert("La calificacion mas baja es de: " + calificacionMasBaja + " puntos y corresponde a " + nombresEstudiantes[indiceMasBaja])
+
+        } else if (opcionMenu == 5) {
+            alert("El programa ha finalizado")
+        }                          
+    }
+
+
+</script>

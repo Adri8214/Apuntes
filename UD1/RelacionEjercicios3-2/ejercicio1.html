@@ -1,0 +1,38 @@
+<script>
+
+    let nota = Number(prompt("Introduce la nota del usuario (0-100)"))
+    let asistencia = Number(prompt("Introduce la asistencia del usuario (0-100)"))
+    let trabajoFinal = prompt("¿Entregó el trabajo final? (Si/No)").toLowerCase();
+
+    if(isNaN(nota) || isNaN(asistencia) || trabajoFinal != "si" && trabajoFinal != "no" || nota < 0 || nota > 100 || asistencia < 0 || asistencia > 100){
+        console.log("Datos introducidos no válidos");
+    } else if(nota < 30){
+        console.log("Suspenso grave");
+    } else if (nota < 50 || asistencia < 75){
+        console.log("Suspenso");
+    }else if(nota >= 50 && nota <= 69){
+        if(trabajoFinal != "si"){
+            console.log("No presentado");
+        }else{
+        console.log("Aprobado");
+        } 
+    } else if(nota >= 70 && nota <= 89){
+        console.log("Notable");
+        if(asistencia == 100){
+            console.log(" con mencion especial");
+        }
+    } else if(nota >= 90 && nota <= 100){
+        console.log("Sobresaliente");
+        if (trabajoFinal == "si" && asistencia == 100) {
+            console.log(" matricula de honor");
+            
+        }
+    }else{
+        console.log("Datos introducidos no válidos");
+        
+    }
+
+
+
+
+</script>

@@ -1,0 +1,54 @@
+<script>
+
+    let numeroClientes = Number(prompt("¿Cuántos clientes participan?"));
+    console.log("¿Cuántos clientes participan?: " + numeroClientes);
+
+    for (let i = 1; i <= numeroClientes; i++) {
+        console.log("Cliente número: " + i);
+
+    let numeroPieza = 0;
+    let tiempoPieza = "";
+    let tiempoTotal = 0;
+    let numeroTiempoPieza = 0;
+    let cuantoHacomido = "";
+    let seguir = true;
+
+    while (tiempoPieza != "STOP" && seguir) {
+        tiempoPieza = prompt("Tiempo pieza " + (numeroPieza + 1) + ": ");
+
+        if (tiempoPieza == "STOP") {
+            seguir = false;
+        } else {
+            numeroTiempoPieza = Number(tiempoPieza);
+
+            if (!isNaN(numeroTiempoPieza) && numeroTiempoPieza > 0) {
+                if (tiempoTotal + numeroTiempoPieza > 1800) {
+                    console.log("Fin por tiempo: esta pieza excede los 1800 segundos y no se contará.");
+                    seguir = false;
+                } else {
+                    numeroPieza++;
+                    tiempoTotal += numeroTiempoPieza;
+                    console.log("Tiempo pieza " + numeroPieza + ": " + numeroTiempoPieza + " segundos");
+                }
+            } else {
+                console.log("Introduce un número válido o escribe STOP.");
+            }
+        }
+    }
+
+    if (numeroPieza < 10) {
+        cuantoHacomido = "Comió poco";
+    } else if (numeroPieza <= 20) {
+        cuantoHacomido = "Buen apetito";
+    } else {
+        cuantoHacomido = "¡Maestro del sushi!";
+    }
+
+    console.log("Cliente " + i + " comió " + numeroPieza + " piezas de sushi en " + tiempoTotal + " segundos. " + cuantoHacomido);
+}
+
+
+
+
+
+</script>

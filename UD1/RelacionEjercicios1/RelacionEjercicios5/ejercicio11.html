@@ -1,0 +1,18 @@
+<script>
+
+   let numero1 = prompt("Introduce un número entero:")
+    numero1 = Number(numero1)
+    let numero2 = prompt("Introduce otro número entero:")
+    numero2 = Number(numero2)
+
+if (numero1 <= numero2){
+    for (let i = numero2; i >= numero1; i--) {
+        console.log(i)
+    }
+} else {
+    console.log("El segundo número es menor que el primero... Podemos darles la vuelta:")
+    for (let i = numero2; i <= numero1; i++) {
+        console.log(i)
+    }
+}
+</script>

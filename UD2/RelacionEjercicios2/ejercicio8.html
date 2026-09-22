@@ -1,0 +1,74 @@
+<script>
+
+    let nombreClientes = []
+    let numeroPersonas = []
+
+    let nuevoCliente
+    let nuevasPeronas
+    let cancelarReserva
+
+    opcionMenu = 0
+
+    while (opcionMenu != 5) {
+        
+        alert("--- MENU ---\n" +
+            "1.Añadir una nueva reserva (nombre del cliente y numero de personas).\n" +
+            "2.Ver la lista de reservas actuales.\n" + 
+            "3.Calcular el total de personas reservadas para ese dia.\n" +
+            "4.Cancelar uan reserva existente (por nombre del cliente)\n" +
+            "5.Salir del programa"
+        )
+        opcionMenu = Number(prompt("Introduce una opcion del 1-5"))
+
+        if (opcionMenu < 1 || opcionMenu > 5 || isNaN(opcionMenu)) {
+            alert("Se debe de introducir una opción válida (1-4)")
+        }else{
+            if (opcionMenu == 1) {
+
+                nuevoCliente = prompt("Introduce el nombre del nuevo cliente")
+                nombreClientes.push(nuevoCliente)
+
+                nuevasPeronas = Number(prompt("Introduce la cantidad personas que van a asistir a la reserva"))
+                numeroPersonas.push(nuevasPeronas)
+
+                alert("Datos introducidos correctamente")
+
+            } else if (opcionMenu == 2) {
+                let lista = "--- Lista DE RESERVAS ---\n"
+                for (let i = 0; i < nombreClientes.length; i++) {
+                    lista += (i + 1) + ". " + nombreClientes[i] + " - " + numeroPersonas[i] + " personas\n"
+                }
+                alert(lista)
+            }else if (opcionMenu == 3) {
+
+                let totalPersonas = 0
+
+                for (let i = 0; i < numeroPersonas.length; i++) {
+                    totalPersonas += numeroPersonas[i]
+                }
+
+                alert("Van a asistir un total de " + totalPersonas + " personas")
+                //ARREGLAR LA OPCION 4 DEL MENU
+            }else if (opcionMenu == 4) {
+                cancelarReserva = prompt("Introduce el nombre de la reserva que se quiera cancelar")
+                
+                for (let i = 0; i < nombreClientes.length; i++) {
+                    if (nombreClientes[i] == cancelarReserva) {
+                        nombreClientes.pop(cancelarReserva)
+                    }
+                }
+                    
+                alert("Reserva cancelada correctamente")
+
+            }else{
+                alert("El programa ha finalizado")
+            }
+        }
+    }
+
+
+
+
+
+
+</script>

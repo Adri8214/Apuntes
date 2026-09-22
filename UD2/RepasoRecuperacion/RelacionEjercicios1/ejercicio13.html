@@ -1,0 +1,17 @@
+<script>
+
+    //Crea un array llamado letras con los valores "a", "b", "c", "d".
+    //Invierte el array utilizando alguno (o varios) de las siguientes funciones: push(), pop(), shift() y unshift().
+    //Imprime el array invertido.
+
+    let letras = ["a", "b", "c", "d"]
+    let invertido = []
+    let longitudArray = letras.length
+
+    for (let i = 0; i < longitudArray; i++) {
+        invertido.push(letras.pop())
+    }
+
+    alert(invertido)
+
+</script>

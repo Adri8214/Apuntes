@@ -1,0 +1,54 @@
+<script>
+
+    let numero1 = 0
+    let numero2 = 0
+    let operacion = " "
+    let resultado = 0
+
+    while(true){
+
+        let entrada = prompt("Introduce el primer número o escribe salir para terminar el programa")
+
+        if (entrada.toLowerCase() == "salir") {
+            console.log("Programa finalizado");
+            break;
+        }
+
+        numero1 = Number(entrada)
+        numero2 = Number(prompt("Introduce el segundo numero: "))
+        operacion = prompt("Introduce la operación: ")
+
+        if(isNaN(numero1) || isNaN(numero2)){
+            console.log("Introduce números válidos");
+            continue;
+        }
+
+        if(operacion == "+"){
+            resultado = numero1 + numero2
+        } else if (operacion == "-"){
+            resultado = numero1 - numero2
+        } else if (operacion == "*"){
+            resultado = numero1 * numero2
+        } else if (operacion == "/"){
+            if(numero2 == 0){
+                console.log("No puede dividirse entre 0");
+                continue;
+            }
+            resultado = numero1 / numero2
+        } else{
+            console.log("La operación debe de tener los siguientes carácteres (+,-,*,/)");
+        }
+
+        console.log("Introduce el primer número: " + numero1);
+        console.log("Introduce el segundo número: " + numero2);
+        console.log("Introduce la operación: " + operacion);
+        console.log("El resultado de " + numero1 + " " + operacion + " " + numero2 + " es " + resultado);
+        
+        
+    }
+
+
+
+
+
+</script>

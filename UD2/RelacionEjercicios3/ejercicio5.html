@@ -1,0 +1,19 @@
+<script>
+
+    let listaCompra1 = ["milk", "eggs", "bread"]
+    let listaCompra2 = ["bread", "butter", "cheese"]
+    let listaSinDuplicados = []
+
+    for (let i = 0; i < listaCompra1.length; i++) {
+        listaSinDuplicados.push(listaCompra1[i])
+    }
+    
+    for (let j = 0; j < listaCompra2.length; j++) {
+        if (!(listaSinDuplicados.includes(listaCompra2[j]))) {
+            listaSinDuplicados.push(listaCompra2[j])
+        }
+    }
+
+    alert(listaSinDuplicados)
+
+</script>

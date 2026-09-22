@@ -1,0 +1,59 @@
+<script>
+
+    // 4. Gestión de Inventario de una Librería
+    // Escribe un programa que permita al usuario gestionar el inventario de una librería. 
+    // El programa debe usar dos arrays: uno para almacenar los títulos de los libros y otro para almacenar las cantidades disponibles de cada libro.
+    // El usuario debe poder realizar las siguientes acciones a través de un menú:
+    // 1. Añadir un nuevo libro al inventario (con su título y cantidad).
+    // 2. Actualizar la cantidad de un libro existente.
+    // 3. Ver el inventario completo (título y cantidad de cada libro).
+    // 4. Salir del programa.
+
+    let Libros = ["El retrato de Dorian Gray", "El principito", "Dune", "Los Pilares de la Tierra".toLocaleLowerCase()]
+    let cantidadesLibros = [5, 1, 9, 30]
+    let opcionMenu = ""
+    let nuevoTitulo
+    let cantidadNuevoTitulo
+    let encontrado = false
+    let cantidadActualizada
+    let libroAActualizar
+    let mensaje = ""
+
+    while (opcionMenu != 4) {
+        opcionMenu = Number(prompt("Introduce un número del menú (1-4): "))
+        if (opcionMenu == 1) {
+
+            nuevoTitulo = prompt("Introduce el nuevo título: ")
+            Libros.push(nuevoTitulo)
+
+            cantidadNuevoTitulo = Number(prompt("Introduce la cantidad del nuevo título"))
+            cantidadesLibros.push(cantidadNuevoTitulo)
+        } else if (opcionMenu == 2) {
+
+            encontrado = false
+            
+            libroAActualizar = prompt("Introduce el libro que deseas actualizar: ")
+            cantidadActualizada = Number(prompt("Introduce la nueva cantidad del libro"))
+            for (let i = 0; i < Libros.length && !encontrado; i++) {
+                if (Libros[i] == libroAActualizar) {
+                    encontrado = true
+                    cantidadesLibros[i] = cantidadActualizada
+                }
+            }
+        } else if (opcionMenu == 3) {
+            mensaje = ""
+            for (let i = 0; i < Libros.length; i++) {
+                mensaje += (i + 1) + ". " + Libros[i] + " - " + cantidadesLibros[i] + "\n"
+            }
+            alert(mensaje)
+            
+        } else if (opcionMenu == 4) {
+            alert("Programa finalizado")
+        } else {
+            alert("Introduce una opción válida")
+        }
+    }
+
+
+
+</script>

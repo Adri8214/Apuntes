@@ -1,0 +1,19 @@
+<script>
+
+    function arrayAleatorio(cantidad, max) {
+        let numerosAleatorios = []
+        let aleatorio = 0
+        for (let i = 0; i < cantidad; i++) {
+            aleatorio = Math.floor(Math.random() * max + 1)
+            numerosAleatorios.push(aleatorio)
+        }
+        return numerosAleatorios
+    }
+    //Genero Array con 5 numeros aleatorios entre 0 y 20
+    alert(arrayAleatorio(5,20))
+    
+    //Genero Array con 2 numeros aleatorios entre 0 y 100
+    alert(arrayAleatorio(2,100))
+
+
+</script>

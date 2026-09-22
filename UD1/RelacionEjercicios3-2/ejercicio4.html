@@ -1,0 +1,32 @@
+<script>
+
+    let temperaturaActual = Number(prompt("Introduce la temperatura actual: "))
+    let horaDelDia = Number(prompt("Introduce la hora del día (0-23)"))
+ 
+    if(isNaN(temperaturaActual) || isNaN(horaDelDia) || horaDelDia < 0 || horaDelDia > 23){
+        console.log("Introduce un dígito válido");
+    } else if(temperaturaActual < 15){
+        if (horaDelDia >= 6 && horaDelDia <= 20) {
+            console.log("Ir a caminar con abrigo");
+        } else if(horaDelDia >= 21 || horaDelDia <= 5){
+            console.log("Quedarse en casa con una bebida caliente");
+        }
+    } else if(temperaturaActual >= 15 && temperaturaActual <= 30){
+        if (horaDelDia >= 6 && horaDelDia <= 20) {
+            console.log("Hacer deporte al aire libre");
+        } else if(horaDelDia >= 21 || horaDelDia <= 5){
+            console.log("Salir a pasear por la ciudad");
+        }
+    } else {
+        if (horaDelDia >= 12 && horaDelDia <= 18) {
+            console.log("Ir a la piscina o a la playa");
+        } else{
+            console.log("Evitar esfuerzos y descansar");
+            
+        }
+    }
+
+
+
+
+</script>

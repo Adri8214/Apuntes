@@ -1,0 +1,62 @@
+<script>
+
+    let numeroClientes = Number(prompt("¿Cuantos clientes hay?: "))
+    let totalPiezas = 0
+    let totalRecaudado = 0
+    for (let i = 1; i <= numeroClientes; i++) {
+        console.log("Cliente " + i);
+
+        let precioPieza = ""
+        let numeroPieza = 1
+        let cuantoHaComido = ""
+        let precioTotal = 0
+        let precioNumerico = 0
+
+        while (precioPieza != "FIN") {
+
+            precioPieza = prompt("Precio de la pieza " + numeroPieza + ": ")
+            console.log("Precio de la pieza " + numeroPieza + ": " + precioPieza);
+            
+            if(precioPieza != "FIN"){
+                precioNumerico = parseFloat(precioPieza)
+            }
+
+            if (!isNaN(precioNumerico) && precioNumerico > 0) {
+                numeroPieza++
+                precioTotal += precioNumerico
+            } else{
+                console.log("Introduce un precio válido o escribe FIN");
+                
+            }
+
+        
+        }
+
+        totalPiezas += numeroPieza
+        totalRecaudado += precioTotal
+
+        if (numeroPieza < 5) {
+            cuantoHaComido = "poco"
+        } else if (numeroPieza <= 10) {
+            cuantoHaComido = "normal"
+        } else{
+            cuantoHaComido = "mucho"
+        }
+
+        let precioMedio = precioTotal / numeroPieza
+        console.log("Cliente " + i + " ha pedido " + numeroPieza + " piezas, ha gastado " + precioTotal.toFixed(2) + "€, media: " + precioMedio.toFixed(2) + "€/pieza y ha comido " + cuantoHaComido);
+        
+        
+    }
+
+    console.log("Total de piezas vendidas: " + totalPiezas);
+    console.log("Total recaudado: " + totalRecaudado.toFixed(2) + "€");
+    
+        
+    
+
+
+
+
+
+</script>

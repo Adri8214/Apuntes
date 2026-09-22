@@ -1,0 +1,82 @@
+<script>
+
+    //Escribe un programa para gestionar las reservas en un restaurante. Usa dos arrays: uno para los nombres de los clientes que han hecho una reserva 
+    //y otro para almacenar el número de personas que cada cliente ha reservado. El programa debe mostrar un menú con las siguientes opciones:
+
+    //1. Añadir una nueva reserva (nombre del cliente y número de personas).
+    //2. Ver la lista de reservas actuales.
+    //3. Calcular el total de personas reservadas para ese día.
+    //4. Cancelar una reserva existente (por nombre del cliente).
+    //5. Salir del programa.
+
+    let nombresClientes = ["David", "Sergio", "Jose", "Raul", "Diego"]
+    let numeroPersonasPorCliente = [15, 2, 5, 3, 10]
+    let opcionMenu = ""
+    let nuevoNombreCliente
+    let numeroDePersonas
+    let mensaje
+    let totalPersonas = 0
+    let buscarNombreCliente
+    let cancelado = false
+
+    while (opcionMenu != 5) {
+
+        opcionMenu = Number(prompt("Introduce la opción del menu que deseas elegir (1-5)\n\n" +
+                                    "1. Añadir una nueva reserva (nombre del cliente y número de personas)\n" +
+                                    "2. Ver la lista de reservas actuales\n" +
+                                    "3. Calcular el total de personas reservadas para ese día\n" +
+                                    "4. Cancelar una reserva existente (por nombre del cliente)\n" +
+                                    "5. Salir del programa\n"))
+        
+        if (opcionMenu == 1) {
+            
+            nuevoNombreCliente = prompt("Introduce el nombre del nuevo cliente: ")
+            numeroDePersonas = Number(prompt("Introduce el numero de personas que van a asistir a la cena"))
+
+            nombresClientes.push(nuevoNombreCliente)
+            numeroPersonasPorCliente.push(numeroDePersonas)
+        
+        } else if (opcionMenu == 2) {
+
+            mensaje = "La lista de reserva actualmente se encuentra así:\n"
+
+            for (let i = 0; i < nombresClientes.length; i++) {
+                mensaje += (i + 1) + ". " + nombresClientes[i] + " va a llevar a " + numeroPersonasPorCliente[i] + " invitados\n"
+            }
+
+            alert(mensaje)
+            
+        } else if (opcionMenu == 3) {
+            
+            totalPersonas = 0
+            
+            for (let i = 0; i < numeroPersonasPorCliente.length; i++) {
+                totalPersonas += numeroPersonasPorCliente[i]
+            }
+
+            alert("Van a asistir un total de " + totalPersonas + " comensales")
+
+        } else if (opcionMenu == 4) {
+
+            buscarNombreCliente = prompt("Introduce el nombre del cliente que quiere cancelar la reserva: ")
+            cancelado = false
+
+            for (let i = 0; i < nombresClientes.length && !cancelado; i++) {
+                if (buscarNombreCliente == nombresClientes[i]) {
+                    cancelado = true
+                    nombresClientes.splice(i, 1)
+                    numeroPersonasPorCliente.splice(i, 1)
+                    alert("Se ha cancelado la reserva de " + buscarNombreCliente)                
+                }
+            }
+
+
+        } else if (opcionMenu == 5) {
+
+            alert("El programa ha finalizado")
+        }
+    }
+
+
+
+</script>

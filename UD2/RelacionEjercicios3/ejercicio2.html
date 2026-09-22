@@ -1,0 +1,16 @@
+<script>
+
+    let nombres = ["Alice", "Bob", "Amy", "David"]
+    let nuevoArray = []
+    
+    let letra = prompt("Introduce una letra").toLowerCase()
+
+    for (let i = 0; i < nombres.length; i++) {
+        if (nombres[i].toLocaleLowerCase().startsWith(letra)) {
+            nuevoArray.push(nombres[i]) 
+        }
+    }
+
+    alert(nuevoArray)
+
+</script>

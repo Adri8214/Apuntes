@@ -1,0 +1,14 @@
+<script>
+
+let puntuacion = Number(prompt("Introduce la puntuación de credito del usuario: "))
+let anios = Number(prompt("Introduce el tiempo que ha estado en el banco: "))
+
+if(puntuacion > 750 && anios > 5){
+    console.log("Se le aprueba un credito premium");
+} else if(puntuacion > 650 && anios >= 2 && anios <= 5){
+    console.log("Se le aprueba un crédito estándar");
+} else if(puntuacion < 650 || anios < 2){
+    console.log("Crédito rechazado");
+}
+
+</script>

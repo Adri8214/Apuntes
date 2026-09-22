@@ -1,0 +1,72 @@
+<script>
+
+    //Desarrolla un programa que permita hacer un seguimiento de las tareas diarias de un equipo.
+    //El programa debe usar dos arrays: uno para almacenar los nombres de las tareas y otro para almacenar el estado de cada tarea (*true* = completada y *false* = pendiente).
+    //El menú del programa debe ofrecer las siguientes opciones:
+
+
+    //1. Añadir una nueva tarea.
+    //2. Marcar una tarea como completada.
+    //3. Ver la lista de tareas pendientes.
+    //4. Ver la lista de tareas completadas.
+    //5. Salir del programa.
+    
+
+    //PENDIENTE DE HACERLO BIEN!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    let nombresTareas = ["Tarea Principal", "Tarea en Equipo", "Reunión Trabajo", "Corrección de errores", "Desarrollo de Fujos de Grafo", "Esquema conceptual del proyecto"]
+    let estadoTarea = [true, false, false, false, true, true]
+    let opcionMenu
+    let tareaCompletada = false
+    let nuevaTarea
+    let tareaPendiente = false
+    let eleccionDeTarea
+
+    while (opcionMenu != 5) {
+
+        opcionMenu = Number(prompt("Introduce una opción del menu (1-5)\n" +
+                                    "1. Añadir una nueva tarea\n" +
+                                    "2. Marcar una tarea como completada\n" +
+                                    "3. Ver la lista de tareas pendientes\n" +
+                                    "4. Ver la lista de tareas completadas\n" +
+                                    "5. Salir del programa\n"))
+
+        if (opcionMenu == 1) {
+
+            nuevaTarea = prompt("Introduce una nueva tarea: ")
+            nombresTareas.push(nuevaTarea)
+
+        }else if (opcionMenu == 2) {
+            
+            eleccionDeTarea = prompt("Introduce el nombre de la tarea que deseas marcar como completada: ")
+
+            for (let i = 0; i < nombresTareas.length; i++) {
+                
+                if (eleccionDeTarea == nombresTareas[i]) {
+                    estadoTarea.push(true)
+                    alert("La tarea se ha marcado como completada")
+
+                }
+            }
+
+        }else if (opcionMenu == 3) {
+            
+            for (let i = 0; i < nombresTareas.length; i++) {
+                alert(nombresTareas[i])
+            }
+            
+        }else if (opcionMenu == 4) {
+            
+            for (let i = 0; i < nombresTareas.length; i++) {
+                alert(nombresTareas[i])
+                
+            }
+
+        }else if (opcionMenu == 5) {
+            alert("El programa ha finalizado")
+        }
+
+    }
+
+
+</script>

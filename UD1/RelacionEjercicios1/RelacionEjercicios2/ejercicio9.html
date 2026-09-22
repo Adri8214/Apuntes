@@ -1,0 +1,17 @@
+<script>
+
+    //Ingresamos el número total de caramelos y de niños
+    let caramelosTotales = Number(prompt("Ingresa el numero de caramelos que tiene el usuario: "))
+    let niños = Number(prompt("Ingresa cuantos niños hay: "))
+
+    //Calculamos los caramelos que recibe cada niño
+    let caramelosPorNiño = parseInt(caramelosTotales / niños)
+
+    //Calculamos los caramelos sobrantes
+    let caramelosSobrantes = parseInt(caramelosTotales % caramelosPorNiño)
+
+    //Mostramos la cantidad de caramelos que recibe cada niño y el número de caramelos sobrantes por consola
+    console.log("Cada niño recibe " + caramelosPorNiño + " caramelos")
+    console.log("Han sobrado " + caramelosSobrantes + " caramelos")
+
+</script>

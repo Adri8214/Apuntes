@@ -1,0 +1,66 @@
+<script>
+
+    //Escribe un programa que permita al usuario gestionar el inventario de una librería. El programa debe usar dos arrays: uno para almacenar los títulos de los libros
+    //y otro para almacenar las cantidades disponibles de cada libro. El usuario debe poder realizar las siguientes acciones a través de un menú:
+
+    //1. Añadir un nuevo libro al inventario (con su título y cantidad).
+    //2. Actualizar la cantidad de un libro existente.
+    //3. Ver el inventario completo (título y cantidad de cada libro).
+    //4. Salir del programa.
+
+
+    let titulosLibros = ["Don Quijote", "Romancero Gitano", "La casa de Bernarda Alba", "Yo, Robot", "El retrato de Dorian Gray"]
+    let cantidadesDisponibles = [5, 6, 1, 9, 10]
+    let opcionMenu
+    let nuevoLibro
+    let nuevaCantidadLibro
+    let existente
+    let nuevaCantidad
+    let buscaLibro
+
+    while (opcionMenu != 4 ) {
+        
+        opcionMenu = Number(prompt("Introduce el número del menu (1-4)"))
+
+        if (opcionMenu == 1) {
+        
+        nuevoLibro = prompt("Ingresa el título de nuevo libro que desees añadir")
+        nuevaCantidadLibro = Number(prompt("Introduce la cantidad disponible del nuevo libro"))
+
+        titulosLibros.push(nuevoLibro)
+        cantidadesDisponibles.push(nuevaCantidadLibro)
+        
+        } else if (opcionMenu == 2) {
+
+            existente = false
+            buscaLibro = prompt("Introduce el título del libro cuya cantidad quieras actualizar")
+            
+            for (let i = 0; i < titulosLibros.length; i++) {
+
+                if (titulosLibros[i] == buscaLibro) {
+                    nuevaCantidad = Number(prompt("Introduce la nueva cantidad del libro:"))
+                    cantidadesDisponibles[i] = nuevaCantidad
+                    existente = true
+                }
+            }
+
+            if (!existente) {
+                    alert("El libro no se encuentra dentro del repertorio")
+                }
+        } else if (opcionMenu == 3) {
+            
+            mensaje = "El inventario se encuentra actualmente de esta manera:\n"
+
+            for (let i = 0; i < titulosLibros.length; i++) {
+                
+                mensaje += (i + 1) + ". " + titulosLibros[i] + " - " + cantidadesDisponibles[i] + "\n"
+            }
+
+            alert(mensaje)
+
+        } else if (opcionMenu == 4) {
+            alert("Fin del programa")
+        }
+    }
+
+</script>

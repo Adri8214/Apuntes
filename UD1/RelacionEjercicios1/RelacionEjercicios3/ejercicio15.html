@@ -1,0 +1,17 @@
+<script>
+
+    //Ingresamos el angulo por teclado 
+    let angulo = Number(prompt("Ingresa el valor del ángulo: "))
+
+    //En función del grado del angulo se indicará si es agudo, recto, obtuso o llano
+    if(angulo < 90){
+        console.log("Ángulo agudo");
+    } else if(angulo == 90){
+        console.log("Angulo recto"); 
+    } else if(angulo > 90 && angulo < 180){
+        console.log("Angulo obtuso"); 
+    } else if(angulo == 180){
+        console.log("Angulo llano"); 
+    }
+
+</script>

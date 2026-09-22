@@ -1,0 +1,34 @@
+<script>
+
+    function juegoAdivinaNumero() {
+        let aleatorio = Math.floor(Math.random() * 10) + 1
+        return aleatorio
+    }
+
+    let numeroAleatorio = juegoAdivinaNumero()
+    let numeroAdivinado = 0
+    while (numeroAdivinado != numeroAleatorio) {
+        
+    let numeroAdivinado = Number(prompt("Adivina el numero"))
+
+     if (numeroAdivinado == numeroAleatorio) {
+            alert("Has adivinado el numero")
+        }else{
+            alert("No has adivinado el numero, era el: " + numeroAleatorio)
+        }
+
+        if (numeroAdivinado > numeroAleatorio) {
+            alert("El numero ingresado es mayor que el numero aleatorio")
+        }else if (numeroAdivinado < numeroAleatorio) {
+            alert("El numero ingresado es menor que el numero aleatorio")
+        }else{
+            alert("El numero ingresado es igual que el numero aleatorio")
+        }   
+    }
+     
+
+    alert(juegoAdivinaNumero())
+
+    //ARREGLAR
+
+</script>

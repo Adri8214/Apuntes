@@ -1,0 +1,17 @@
+<script>
+
+    //Introducimos tanto el promedio academico como el ingreso anual familiar del usuario
+    let promedioAcademico = Number(prompt("Introduce el promedio academico: "))
+    let ingresoAnual = Number(prompt("Introduce el ingreso familiar anual: "))
+
+    //En función de su promedio y sus ingresos recibirá una beca completa o parcial
+    //Si su promedio es menor a 8, ditrectamente no recibirá beca
+    if(promedioAcademico >= 8 && ingresoAnual < 20000){
+        console.log("El usuario recibe la beca completa");
+    } else if(promedioAcademico >= 8 && ingresoAnual > 20000){
+        console.log("El usuario recibe la beca parcial");
+    } else{
+        console.log("El usuario no recibe beca");
+    }
+
+</script>

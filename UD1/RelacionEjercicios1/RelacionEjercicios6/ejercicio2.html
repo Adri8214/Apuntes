@@ -1,0 +1,25 @@
+<script>
+
+    let saldoInicial = 1000
+    
+    while(saldoInicial != 0){
+
+        let saldoARetirar = Number(prompt("Saldo: " + saldoInicial + " | Introduzca saldo a retirar: "))
+
+        if (isNaN(saldoARetirar) || saldoARetirar <= 0) {
+            console.log("Introduzca un valor numérico o un valor mayor que cero");
+            continue;
+        }
+
+        if(saldoARetirar > saldoInicial){
+            console.log("Saldo insuficiente");
+        } else{
+            saldoInicial -= saldoARetirar
+        }
+
+        if (saldoInicial == 0){
+            console.log("Te has quedado sin sueldo ¡A trabajar!");
+        }
+    }
+
+</script>

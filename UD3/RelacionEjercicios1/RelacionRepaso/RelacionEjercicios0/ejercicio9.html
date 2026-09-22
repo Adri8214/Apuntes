@@ -1,0 +1,22 @@
+<script>
+
+    //Crea una función llamada menorDeTres que reciba tres números y devuelva el menor de los tres.
+
+    function menorDeTres(numero1, numero2, numero3) {
+        let mayor = numero3
+    
+        if (numero1 > numero3) {
+            mayor = numero1
+        }else if (numero2 > numero3) {
+            mayor = numero2
+        }else{
+            mayor = numero3
+        }
+
+        return mayor
+    }
+
+    let resultado = menorDeTres(9, 8, 7)
+    alert("El numero mas grande de los 3 es: " + resultado)
+
+</script>

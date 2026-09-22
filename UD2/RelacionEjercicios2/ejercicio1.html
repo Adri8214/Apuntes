@@ -1,0 +1,69 @@
+<script>
+
+    let temperatura = []
+    const DIASSEMANA = 7
+    let temperaturaSemana
+    let menu
+    
+    for (let i = 0; i < DIASSEMANA; i++) {
+        temperaturaSemana = Number(prompt("Introduce la temperatura por cada dia de la semana: "))
+
+        while (temperaturaSemana < -270 || temperaturaSemana > 100 || isNaN(temperaturaSemana)) {
+            temperaturaSemana = Number(prompt("Introduce la temperatura por cada dia de la semana: "))
+        }
+        
+        temperatura.push(temperaturaSemana)
+
+    }
+
+    console.log(temperatura);
+
+    let temperaturaMasAlta = temperatura[0]
+    let temperaturaMasBaja = temperatura[0]
+    let temperaturaMedia = 0
+    let sumatorioTemperaturas = 0
+
+    while (menu != 4) {
+            menu = Number(prompt("Introduce un número del 1-4"))
+            if (isNaN(menu) || menu < 1 || menu > 4) {
+                console.log("Introduce un número del 1 al 4");
+                
+            }else{
+
+                if (menu == 1) {
+                console.log("1.Mostrar la temperatura más alta registrada");
+                for (let i = 0; i < temperatura.length; i++) {
+                    if (temperatura[i] > temperaturaMasAlta) {
+                        temperaturaMasAlta = temperatura[i]
+                    }
+                    
+                }
+
+                console.log("La temperatura mas alta es de: " + temperaturaMasAlta + " grados");
+            
+            }else if(menu == 2){
+                console.log("2.Mostrar la temperatura más baja registrada");
+                for (let i = 0; i < temperatura.length; i++) {
+                    if (temperatura[i] < temperaturaMasBaja) {
+                        temperaturaMasBaja = temperatura[i]
+                    }
+                }
+
+                console.log("La temperatura mas baja es de: " + temperaturaMasBaja + " grados");
+
+            }else if (menu == 3) {
+                console.log("3.Calcular la temperatura promedio de la semana");
+
+                for (let i = 0; i < temperatura.length; i++) {
+                    sumatorioTemperaturas += temperatura[i]
+                    temperaturaMedia = sumatorioTemperaturas / DIASSEMANA
+                }
+                console.log("La temperatura media es de: " + temperaturaMedia.toFixed(2) + "  grados");
+
+            }else{
+                console.log("El programa ha finalizado");
+            }
+        }
+    }
+
+</script>

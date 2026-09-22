@@ -1,0 +1,31 @@
+<script>
+
+    //Crea una función llamada invertirArrayPopPush que reciba un array y devuelva un nuevo array con los elementos en orden inverso.
+
+    function invertirArrayPopPush(arrayDeNumeros) {
+        let tamanioArrayNumeros = arrayDeNumeros.length
+        let arrayDeNumerosInvertido = []
+        let ultimoElemento = 0  
+
+        for (let i = 0; i < tamanioArrayNumeros; i++) {
+            ultimoElemento = arrayDeNumeros.pop()
+            arrayDeNumerosInvertido.push(ultimoElemento)
+            
+        }
+
+        return arrayDeNumerosInvertido
+    }
+
+    // ------------------ MAIN ---------------------
+
+    let numeros = []
+    const NUMEROS_ARRAY = 5
+
+    for (let i = 1; i <= NUMEROS_ARRAY; i++) {
+        numeros.push(10 * i)
+    }
+
+    alert(numeros)
+    alert(invertirArrayPopPush(numeros))
+
+</script>

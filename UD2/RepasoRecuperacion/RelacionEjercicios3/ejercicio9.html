@@ -1,0 +1,21 @@
+<script>
+
+    //Dado un array de números, escribe una función que cuente cuántos números son mayores que un valor dado X.
+    //Ejemplo: [5, 12, 8, 30, 25] con X = 10 debería devolver 3 (porque hay tres números mayores a 10: 12, 30 y 25).
+
+    let arrayNumeros = [5, 12, 8, 30, 25]
+    let x = 10
+    let numerosMayoresQueX = []
+    let contador = 0
+
+    for (let i = 0; i < arrayNumeros.length; i++) {
+        if (arrayNumeros[i] > x) {
+            contador++
+            numerosMayoresQueX.push(arrayNumeros[i])
+        }
+    }
+
+    alert("Hay " + contador + " numeros mayores que 10, los cuales son: " + numerosMayoresQueX)
+
+
+</script>

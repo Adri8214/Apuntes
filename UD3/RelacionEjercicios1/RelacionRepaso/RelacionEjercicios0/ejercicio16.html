@@ -1,0 +1,31 @@
+<script>
+
+    //Crea una función llamada verificarNumeroEnArray que reciba un número y un array,
+    // y devuelva true si el número está presente en el array o false si no lo está.
+
+    function verificarNumeroEnArray(numero, array) {
+        let verificar = false
+
+        for (const elemento of array) {
+            if (elemento == numero) {
+                verificar = true
+            }
+        }
+
+        return verificar
+    }
+
+    // --------------------- MAIN --------------------------
+
+    let numeros = []
+    const NUMEROS_ARRAY = 5
+
+    for (let i = 1; i <= NUMEROS_ARRAY; i++) {
+        numeros.push(10 * i)
+    }
+
+    alert(numeros)
+    alert(verificarNumeroEnArray(200, numeros))
+
+
+</script>

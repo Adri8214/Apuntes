@@ -1,0 +1,30 @@
+<script>
+
+    let numero1 = Number(prompt("Introduce el primer número: "))
+    let numero2 = Number(prompt("Introduce el segundo número: "))
+    let operación = prompt("Introduce una operación (+, -, *, /)")
+
+    let suma = numero1 + numero2
+    let resta = numero1 - numero2
+    let multiplicación = numero1 * numero2
+    let división = numero1 / numero2
+
+    if(operación == "+"){
+        console.log(suma)
+    } else if(operación == "-"){
+        console.log(resta);
+    } else if(operación == "*"){
+        console.log(multiplicación)
+    } else if(operación == "/"){
+         if(numero2 != 0){
+        console.log(división);   
+    } else{
+        console.log("No se puede dividir entre 0");
+    }
+    } else{
+        console.log("El caracter introducido no es válido");
+    }
+    
+
+
+</script>

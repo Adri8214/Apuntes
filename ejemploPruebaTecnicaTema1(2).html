@@ -1,0 +1,46 @@
+<script>
+
+    let numeroElectrodomesticos = Number(prompt("Introduce el número de electrodomesticos a registar: "))
+    console.log("Introduce el número de electrodomesticos a registar: " + numeroElectrodomesticos);
+    
+    let precioKw = parseFloat(prompt("Introduce el precio por kilovatio-hora (KWh)"))
+    console.log("Introduce el precio por kilovatio-hora (KWh)" + precioKw);
+    
+    let potenciaContratada = Number(prompt("Introduce la potencia total contratada (en vatios): "))
+    console.log("Introduce la potencia total contratada (en vatios): " + potenciaContratada);
+    
+    let electrodomesticos = 0
+    let potenciaElectrodomesticos = 0
+    let numeroHoras = 0
+    let consumoDiario = 0
+    let consumoTotalMensual = 0
+    let costeTotalMensual = 0
+
+    for (let i = 0; i < numeroElectrodomesticos; i++) {
+        electrodomesticos++
+  
+        potenciaElectrodomesticos = Number(prompt("Introduce la potencia del electrodomestico " + electrodomesticos + " (en vatios): "))
+        console.log("Introduce la potencia del electrodomestico " + electrodomesticos + " (en vatios): " + potenciaElectrodomesticos);
+        
+        numeroHoras = Number(prompt("Introduce el numero de horas de uso diario: "))
+        console.log("Introduce el numero de horas de uso diario: " + numeroHoras);
+
+        if (potenciaElectrodomesticos > potenciaContratada) {
+            console.log("¡Alerta! Has superado la potencia de " + potenciaContratada + "W.");
+            
+        }
+
+         consumoDiario = (potenciaElectrodomesticos / 1000) * numeroHoras
+         consumoTotalMensual += consumoDiario * 30
+         costeTotalMensual = consumoTotalMensual * precioKw
+    }
+
+    console.log("Consumo total mensual: " + consumoTotalMensual + " KWh");
+    console.log("Coste total mensual: " + costeTotalMensual.toFixed(2) + " €");
+    
+
+
+
+
+
+</script>

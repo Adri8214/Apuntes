@@ -1,0 +1,44 @@
+<script>
+
+    let combustibleInicial = parseFloat(prompt("Introduce el combustible inicial: "))
+    let precioLitro = parseFloat(prompt("Precio del litro del combustible: "))
+    let consumoCada100 = parseFloat(prompt("Consumo cada 100km: "))
+    let combustibleRestante = 0
+    let precioDelViaje = 0
+    let kmViaje = 0
+    let viaje = 0
+    let combustibleNecesario = 0
+    console.log("Introduce el combustible inicial: " + combustibleInicial);
+    console.log("Precio del litro de combustible: " + precioLitro);
+    console.log("Consumo cada 100km: " + consumoCada100);
+    
+
+    while (true) {
+        viaje++
+        kmViaje = Number(prompt("Introduce los kilómetros del viaje " + viaje + ": " ))
+       
+        if(isNaN(kmViaje)){
+            console.log("Fin del programa");
+            break;
+        }
+
+        precioDelViaje = ((consumoCada100 * kmViaje) / 100) * precioLitro
+
+        combustibleNecesario = (kmViaje * consumoCada100) / 100
+
+        if (combustibleNecesario > combustibleInicial) {
+            console.log("¡Combustible insuficiente!");
+            break;
+        }
+
+
+        combustibleInicial -= combustibleNecesario
+        
+        console.log("Introduce los kilómetros del viaje " + viaje + ": " + kmViaje);
+        console.log("Precio del viaje: " + precioDelViaje + "€");
+        console.log("Combustible restante: " + combustibleInicial + " litros");
+        
+    }
+
+
+</script>

@@ -1,0 +1,83 @@
+<script>
+
+    let nombreGastos = []
+    let cantidadesGastadas = []
+
+    let opcionMenu = 0
+    let nuevoNombre
+    let nuevaCantidad
+    const mes = 30
+
+    while (opcionMenu != 5) {
+        
+        alert("--- MENU ---\n" +
+            "1.Añadir un nuevo gasto(nombre y cantidad).\n" +
+            "2.Ver el total de gastos hasta el momento.\n" +
+            "3.Ver los gastos más altos y más bajos del mes.\n" +
+            "4.Ver el promedio de gasto diario (suponiendo un mes de 30 dias).\n" +
+            "5.Salir del programa"
+        )
+
+        opcionMenu = Number(prompt("Introduce una opción del 1-5"))
+
+        if (opcionMenu < 1 || opcionMenu > 5 || isNaN(opcionMenu)) {
+            alert("Debes de introducir una opción válida")
+        }else{
+            if (opcionMenu == 1) {
+            nuevoNombre = prompt("Introduce el nombre del nuevo gasto")
+            nombreGastos.push(nuevoNombre)
+
+            nuevaCantidad = Number(prompt("Introduce la cantidad del nuevo gasto"))
+            cantidadesGastadas.push(nuevaCantidad)
+
+            alert("Datos añadidos correctamente")
+        }else if (opcionMenu == 2) {
+            //Añadimos la variable total y la igualamos a 0 para reiniciar el incremento
+            let total = 0
+            
+            for (let i = 0; i < cantidadesGastadas.length; i++) {
+                total+= cantidadesGastadas[i]
+            }
+            alert("Se ha gastado un total de " + total)
+        }else if (opcionMenu == 3) {
+
+            let gastoMasAlto = cantidadesGastadas[0]
+            let gastoMasBajo = cantidadesGastadas[0]
+            
+
+            for (let i = 0; i < cantidadesGastadas.length; i++) {
+                if (cantidadesGastadas[i] > gastoMasAlto) {
+                    gastoMasAlto = cantidadesGastadas[i]
+                }else if (cantidadesGastadas[i] < gastoMasBajo) {
+                    gastoMasBajo = cantidadesGastadas[i]
+                }
+            }
+
+            let nombreMasAlto = nombreGastos[cantidadesGastadas.indexOf(gastoMasAlto)]
+            let nombreMasBajo = nombreGastos[cantidadesGastadas.indexOf(gastoMasBajo)]
+            
+            alert("El gasto mas alto es " + nombreMasAlto + "." + gastoMasAlto + " y el gasto mas bajo es: " + nombreMasBajo + "." + gastoMasBajo)
+        
+        }else if (opcionMenu == 4) {
+            
+            let promedioGastado = 0
+            let totalGastado = 0
+            
+            for (let i = 0; i < cantidadesGastadas.length; i++) {
+                totalGastado += cantidadesGastadas[i]
+                promedioGastado = totalGastado / mes
+            }
+            
+            alert("Se ha gastado un total de " + promedioGastado.toFixed(2) + " por dia")
+        
+        }else{
+
+            alert("Se ha finalizado el programa")
+        }
+    }
+
+    }
+
+
+
+</script>

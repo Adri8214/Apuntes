@@ -1,0 +1,19 @@
+<script>
+
+    //Introducimos un año por teclado
+    let anio = Number(prompt("Introduce un año: "))
+
+    let divisible4 = (anio % 4 == 0)
+    let divisible100 = (anio % 100 == 0)
+    let divisible400 = (anio % 400 == 0)
+
+    let esBisiesto = ((divisible4 && !divisible100) || divisible400)
+    //Si el año introducido es modulo de 4, el año es bisisesto
+    if(esBisiesto){
+        console.log("El año es bisiesto");
+    //Si el año introducido no es modulo de 4, el año no es bisisesto
+    }else{
+        console.log("El año no es bisiesto");
+    }
+
+</script>

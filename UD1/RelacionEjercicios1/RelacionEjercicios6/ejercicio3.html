@@ -1,0 +1,42 @@
+<script>
+
+    let producto = 0
+    let precioProducto = Number(prompt("Precio del producto " + producto + ":"))
+    let calcularPropina = 0
+    let propina = 0
+    let personas = 0
+    let totalSinPropina = 0
+    let totalConPropina = 0
+    let precioPorCabeza = 0
+
+    while (precioProducto != 0) {
+        producto++
+        precioProducto = Number(prompt("Precio del producto " + producto + ":"))
+        console.log("Precio del producto " + producto + ": " + precioProducto);
+        
+        totalSinPropina += precioProducto
+
+        if(propina > 0){
+            precioPorCabeza = calcularPropina / personas
+        } else{
+            precioPorCabeza = totalSinPropina / personas
+        }
+    }
+
+    propina = Number(prompt("¿Cuanta propina quieres dejar?"))
+        calcularPropina = (totalSinPropina * propina) / 100
+        propina = totalSinPropina + calcularPropina
+    personas = Number(prompt("¿Cuantas personas sois?"))
+
+
+    console.log("¿Cuanta propina quieres dejar?:" + propina);
+    console.log("¿Cuantas personas sois?:" + personas);
+    console.log("Total sin propina:" + totalSinPropina + "€");
+    console.log("Total con propina:" + propina + "€");
+    console.log("Precio por cabeza: " + precioPorCabeza);
+    
+    //TERMINAR Y ARREGLAR
+
+
+
+</script>

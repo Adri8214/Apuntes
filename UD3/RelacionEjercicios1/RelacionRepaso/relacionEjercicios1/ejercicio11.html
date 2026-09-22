@@ -1,0 +1,28 @@
+<script>
+
+//Crea una función juegoPiedraPapelTijeras que genere aleatoriamente
+//una elección entre "Piedra", "Papel" o "Tijeras" y permite al usuario jugar contra la máquina.
+
+    function juegoPiedraPapelTijeras() {
+        let opciones = ["Piedra", "Papel", "Tijeras"]
+        let indice = Math.floor(Math.random() * opciones.length)
+        let opcionAleatoria = opciones[indice]
+
+        return opcionAleatoria
+    }
+
+
+    let maquina = juegoPiedraPapelTijeras()
+    let eleccionUsuario = prompt("Elige entre Piedra, Papel o Tijeras")
+
+    if (eleccionUsuario == "Piedra" && maquina == "Tijeras" || eleccionUsuario == "Papel" &&
+        maquina == "Piedra"|| eleccionUsuario == "Tijeras" && maquina == "Papel") {
+        alert("Gana el usuario")
+    }else if (maquina == "Piedra" && eleccionUsuario == "Tijeras" || maquina == "Papel" &&
+        eleccionUsuario == "Piedra"|| maquina == "Tijeras" && eleccionUsuario == "Papel") {
+        alert("Gana la maquina")
+    }else{
+        alert("Empate")
+    }
+
+</script>

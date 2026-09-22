@@ -1,0 +1,19 @@
+<script>
+
+ let numero = (prompt("Introduzca un número: "))
+    numero = Number(numero)
+
+    numero++
+    console.log("Incremento el número para empezar a comprobar desde el siguiente: " + numero);
+    
+    while(numero % 3 != 0){
+        numero++
+        console.log("Dentro del bucle el número vale " + numero);
+    }
+
+    console.log("Salgo del bucle");
+    
+    console.log("El siguiente número múltiplo de 3 es: " + numero);
+
+
+</script>

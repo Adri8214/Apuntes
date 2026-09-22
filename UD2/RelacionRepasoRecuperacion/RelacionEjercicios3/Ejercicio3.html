@@ -1,0 +1,18 @@
+<script>
+
+    // Tienes un array de palabras.
+    // Escribe una función que cuente cuántas letras tiene cada palabra y devuelva un array con la cantidad de letras para cada palabra en el mismo orden.
+    // Ejemplo: ["apple", "banana", "kiwi"] debería devolver [5, 6, 4].
+
+    let arrayPalabras = ["apple", "banana", "kiwi"]
+    let numeroLetras = []
+    let longitudPalabras
+
+    for (let i = 0; i < arrayPalabras.length; i++) {
+        longitudPalabras = arrayPalabras[i].length
+        numeroLetras.push(longitudPalabras)
+    }
+
+    alert(numeroLetras)
+
+</script>

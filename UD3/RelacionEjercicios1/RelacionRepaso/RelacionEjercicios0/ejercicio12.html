@@ -1,0 +1,26 @@
+<script>
+
+    //Crea una función llamada obtenerImpares que reciba un array y devuelva un nuevo array con los números impares.
+
+    function obtenerImpares(arrayNumeros) {
+        let impar = []
+
+        for (let elemento of arrayNumeros) {
+            if (elemento % 2 != 0) {
+                impar.push(elemento)
+            }
+        }
+        return impar
+    }
+
+    let numeros = []
+    const TAMANIO_ARRAY = 8
+
+    for (let i = 0; i < TAMANIO_ARRAY; i++) {
+        numeros.push (Math.floor(Math.random() * 100))
+    }
+
+    alert(numeros)
+    alert(obtenerImpares(numeros))
+
+</script>

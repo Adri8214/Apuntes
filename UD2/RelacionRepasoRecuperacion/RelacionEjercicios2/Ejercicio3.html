@@ -1,0 +1,43 @@
+<script>
+
+    // 3. Sistema de Compras en Almacén
+    // 1. Crea un array que contenga los nombres de 10 productos disponibles en el almacén.
+    // 2. Crea otro array que contenga los precios correspondientes a esos 10 productos.
+    // 3. El programa debe permitir al usuario realizar una compra solicitando el nombre del producto y la cantidad deseada.
+    // 4. El programa debe buscar el precio del producto seleccionado, multiplicarlo por la cantidad y añadirlo al total de la compra.
+    // 5. Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los productos adquiridos, sus cantidades, y el costo total a pagar.
+
+    let productos = ["Caja", "Lapiz", "Boli", "Mechero", "Botellas", "Velas", "Cartones", "Libretas", "Ordenadores", "Libros"]
+    let precios = [2, 1, 1.5, 3, 10, 0.50, 0.25, 5, 500, 20]
+    let productoAElegir
+    let cantidadDeseada = 0
+    let total = 0
+    let subtotal
+    let resumen
+    while (productoAElegir != "FIN". toLocaleLowerCase()) {
+        
+        productoAElegir = prompt("Introduce el producto que deseas elegir")
+
+        if (productoAElegir != "FIN".toLocaleLowerCase()) {
+            cantidadDeseada = Number(prompt("Introduce el número de productos que deseas adquirir"))
+        
+        let encontrado = false
+
+        for (let i = 0; i < productos.length && !encontrado; i++) {
+            if (productos[i] == productoAElegir) {
+                encontrado = true
+                subtotal = precios[i] * cantidadDeseada
+                total += subtotal
+                alert(productoAElegir + " - " + cantidadDeseada + ": " + subtotal + "€")
+            }
+        }
+    }
+}
+
+alert("TOTAL: " + total + "€")
+
+
+
+
+
+</script>

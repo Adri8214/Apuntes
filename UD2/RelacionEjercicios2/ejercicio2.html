@@ -1,0 +1,41 @@
+<script>
+
+    let jugadores = ["Jugador1", "Jugador2", "Jugador3", "Jugador4", "Jugador5"]
+    let puntuaciones = [120, 200, 150, 180, 220]
+    let opcion
+    let nuevoJugador
+    let nuevaPuntuacion
+
+    console.log("Introduce un número del 1-3") 
+    console.log("1-Introduce el nombre y la puntuación del nuevo jugador");
+    console.log("2-Muestra los jugadores y las puntuaciones actuales");
+    console.log("3- Para salir del programa)");
+
+    while (opcion != 3) {
+        opcion = Number(prompt("Introduce un numero del 1-3"))
+
+        while (isNaN(opcion) || opcion < 1 || opcion > 3) {
+            console.log("Introduce una opción válida");
+        opcion = Number(prompt("Introduce un numero del 1-3"))    
+        } 
+
+        if (opcion == 1) {
+            nuevoJugador = prompt("Introduce el nombre del nuevo jugador")
+            jugadores.shift()
+            jugadores.push(nuevoJugador)
+
+            nuevaPuntuacion = Number(prompt("Introduce la nueva puntuacion del jugador"))
+            puntuaciones.shift()
+            puntuaciones.push(nuevaPuntuacion)
+
+        } else if (opcion == 2) {
+            for (let i = 0; i < jugadores.length; i++) {
+                console.log( (i + 1) + "." + jugadores[i] + " - " + puntuaciones[i] + " puntos");
+            }
+        } else{
+            console.log("El programa ha finalizado");
+        }
+    }
+    
+
+</script>

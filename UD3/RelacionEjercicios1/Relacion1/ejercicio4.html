@@ -1,0 +1,18 @@
+<script>
+
+    function arrayAleatorio(cantidad, min, max) {
+        let numerosAleatorios = []
+        let aleatorio = 0
+        for (let i = 0; i < cantidad; i++) {
+            aleatorio = Math.floor(Math.random() * max - min + 1) + min
+            numerosAleatorios.push(aleatorio)
+        }
+        return numerosAleatorios
+    }
+    //Genero Array con 5 numeros aleatorios entre 2 y 20
+    alert(arrayAleatorio(5,2,20))
+    
+    //Genero Array con 2 numeros aleatorios entre 10 y 100
+    alert(arrayAleatorio(2,10,100))
+
+</script>

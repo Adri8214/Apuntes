@@ -1,0 +1,69 @@
+    <script>
+
+        // 6. Sistema de Seguimiento de Tareas
+        // Desarrolla un programa que permita hacer un seguimiento de las tareas diarias de un equipo.
+        // El programa debe usar dos arrays: uno para almacenar los nombres de las tareas y otro para almacenar el estado de cada tarea (*true* = completada y *false* = pendiente). 
+        // El menú del programa debe ofrecer las siguientes opciones:
+        // 1. Añadir una nueva tarea.
+        // 2. Marcar una tarea como completada.
+        // 3. Ver la lista de tareas pendientes.
+        // 4. Ver la lista de tareas completadas.
+        // 5. Salir del programa.
+
+        let nombresTareas = ["Hacer la compra", "Recoger lavadora", "Ir al gimnasio", "Terminar trabajo"]
+        let estadoTarea = [false, true, true, false]
+        let opcionMenu = ""
+        let nuevaTarea
+        let encontrada = false
+        let mensaje = ""
+
+        while (opcionMenu != 5) {
+            opcionMenu = Number(prompt("Introduce una opción válida: \n" +
+                "1. Añadir una nueva tarea \n" +
+                "2. Marcar una tarea como completada.\n" +
+                "3. Ver la lista de tareas pendientes.\n" +
+                "4. Ver la lista de tareas completadas.\n" +
+                "5. Salir del programa."
+            ))
+
+            if (opcionMenu == 1) {
+                nuevaTarea = prompt("Introduce la nueva tarea: ")
+                nombresTareas.push(nuevaTarea)
+                estadoTarea.push(false)
+
+            } else if (opcionMenu == 2) {
+                tareaCompletada = prompt("Introduce el nombre de la tarea que deseas completar: ")
+                for (let i = 0; i < nombresTareas.length; i++) {
+                    if (nombresTareas[i] == tareaCompletada) {
+                        estadoTarea[i] = true
+                        encontrada = true
+                    }
+                }
+
+            } else if (opcionMenu == 3) {
+                mensaje = ""
+                for (let i = 0; i < nombresTareas.length; i++) {
+                    if (estadoTarea[i] == false) {
+                        mensaje += nombresTareas[i] + "\n"
+                    }
+                }
+                alert("Las tareas pendientes son: " + mensaje)
+
+            } else if (opcionMenu == 4) {
+                mensaje = ""
+                for (let i = 0; i < nombresTareas.length; i++) {
+                    if (estadoTarea[i] == true) {
+                        mensaje += nombresTareas[i] + "\n"
+                    }
+                }
+                alert("Las tareas completadas son: " + mensaje)
+
+            } else if (opcionMenu == 5) {
+                alert("Programa finalizado")
+            } else {
+                alert("Introduzca una opción válida")
+            }
+        }
+
+
+    </script>

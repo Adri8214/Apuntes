@@ -1,0 +1,23 @@
+<script>
+
+    //Escribe una función cartaAleatoria que devuelva una carta aleatoria de una baraja (con un número del 1 al 13,
+    //que representaría el valor, y uno de los cuatro palos: corazones, diamantes, tréboles o picas).
+
+    function cartaAleatoria() {
+        let numero = 0
+        let palos = ["corazones", "diamantes", "tréboles", "picas"]
+        let carta = ""
+        let indiceAleatorio = 0
+
+        numero = Math.floor(Math.random() * 13) + 1
+        indiceAleatorio = Math.floor(Math.random() * palos.length)
+        let palo = palos[indiceAleatorio]
+        carta = numero + ". " + palo
+
+        return carta
+    }
+
+    alert(cartaAleatoria())
+
+
+</script>

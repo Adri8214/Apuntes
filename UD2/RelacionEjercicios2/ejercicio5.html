@@ -1,0 +1,79 @@
+<script>
+
+    let nombreEstudiante = []
+    let calificaciones = []
+
+    let opcionMenu = 0
+    let nuevoEstudiante
+    let nuevaCalificacion
+    let sumatorioCalificaciones = 0
+    let promedioCalificacion
+    let indiceMasAlta = 0
+    let indiceMasBaja = 0
+
+    while (opcionMenu != 5) {
+        
+        alert("--- MENU ---\n" +
+            "1.Añadir un estudiante y su calificacion\n" +
+            "2.Mostrar la calificacion promedio de la clase\n" +
+            "3.Mostrar la calificacion mas alta y el nombre del estudiante correspondiente\n" +
+            "4.Mostrar la calificacion mas baja y el nombre del estudiante correspondiente\n" +
+            "5.Salir del programa"
+        
+        )
+        opcionMenu = Number(prompt("Introduce una opción 1-5"))
+
+        if (opcionMenu < 1 || opcionMenu > 5 || isNaN(opcionMenu)) {
+            alert("Debes de introducir un valor entre 1-5")
+        }
+
+        if (opcionMenu == 1) {
+            nuevoEstudiante = prompt("Introduce el nombre del nuevo estudiante")
+            nuevaCalificacion = Number(prompt("Introduce la nueva calificacion del estudiante"))
+
+            nombreEstudiante.push(nuevoEstudiante)
+            calificaciones.push(nuevaCalificacion)
+        
+        }else if (opcionMenu == 2) {
+            
+            for (let i = 0; i < calificaciones.length; i++) {
+                sumatorioCalificaciones += calificaciones[i]
+                promedioCalificacion = sumatorioCalificaciones / calificaciones.length
+            }
+            
+            alert("El promedio de las calificaciones es de " + promedioCalificacion)
+        
+        }else if (opcionMenu == 3) {
+            
+            let calificacionMasAlta = calificaciones[0]
+            
+            for (let i = 0; i < calificaciones.length; i++) {
+                
+                if (calificaciones[i] > calificacionMasAlta) {
+                    calificacionMasAlta = calificaciones[i]
+                    indiceMasAlta = i
+                }
+            }
+            alert("La nota mas alta es " + calificacionMasAlta + " del alumno " + nombreEstudiante[indiceMasAlta])
+        }else if (opcionMenu == 4) {
+
+            let calificacionMasBaja = calificaciones[0]
+            
+            for (let i = 0; i < calificaciones.length; i++) {
+                if (calificaciones[i] < calificacionMasBaja) {
+                    calificacionMasBaja = calificaciones[i]
+                    indiceMasBaja = i
+                }
+            }
+                alert("La nota mas baja es de " + calificacionMasBaja + " del alumno " + nombreEstudiante[indiceMasBaja])
+        }else{
+            alert("El programa ha finalizado")
+        }
+
+    }
+
+
+
+
+
+</script>

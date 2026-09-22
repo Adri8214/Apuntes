@@ -1,0 +1,37 @@
+<script>
+
+    let alumno = 1
+    let calificación = 0
+    let promedio = 0
+    let alumnosSuspensos = 0
+    let alumnosAprobados = 0
+    let suma = 0
+    let contador = 0
+
+     calificación = parseFloat(prompt("Introduce la calificación del alumno" + alumno + " : "))
+
+
+    while(calificación != -1){
+     suma+=calificación
+     contador++
+     alumno++
+
+        if(calificación >= 5){
+        alumnosAprobados++
+     } else if (calificación >=0 && calificación < 5){
+        alumnosSuspensos++
+     }
+
+     calificación = parseFloat(prompt("Introduce la calificación del alumno" + alumno + " : "))
+     
+
+    }
+    
+     console.log("Hay " + alumnosAprobados + " alumnos aprobados y " + alumnosSuspensos + " alumnos suspensos");
+     if(contador > 0){
+        promedio = suma / contador
+        console.log("La media es de: " + promedio);
+     }
+     
+
+</script>

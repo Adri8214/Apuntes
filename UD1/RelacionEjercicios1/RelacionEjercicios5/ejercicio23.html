@@ -1,0 +1,29 @@
+<script>
+
+   let numero = prompt("Introduce un número: ");
+numero = Number(numero);
+
+let piramide = "";
+let asteriscos = "";
+let espacios = "";
+
+for (let i = 0; i < numero; i++) {
+    espacios = ""; 
+    asteriscos = "";  
+
+    for (let j = 0; j < i; j++) {
+        espacios += " ";
+    }
+
+    let cantidadAsteriscos = numero - i ;
+    for (let k = 0; k < cantidadAsteriscos; k++) {
+        asteriscos += "*";
+        
+    }
+
+    piramide = espacios + asteriscos;
+    console.log(piramide);
+}
+
+
+</script>

@@ -1,0 +1,22 @@
+<script>
+
+    //Ingresamos un número por teclado
+    let numero = Number(prompt("Ingresa un número de dos cifras"))
+
+    //Separamos el número de dos cifras
+    let numero1 = parseInt(numero / 10)
+    let numero2 = parseInt(numero % 10)
+
+    //Una vez separado el número en dos, sumamos las dos cifras
+    let suma = parseInt (numero1 + numero2)
+
+    //Si el número ingresado no tiene dos cifras, aparecerá un mensaje que indicará que el número ingresado debe de tener dos cifras
+    //Si el número ingresado está compuesto de dos cifras, estas se sumarán
+    if(numero > 0 && numero < 10){
+        console.log("El número debe de tener dos cifras");
+    }else{
+        console.log("La suma de ambos números es de: " + suma);
+        
+    }
+    
+</script>

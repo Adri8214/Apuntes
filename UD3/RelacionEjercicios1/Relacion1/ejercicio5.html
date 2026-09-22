@@ -1,0 +1,28 @@
+<script>
+
+
+    function caraOCruz() {
+        let caraCruz
+        let aleatorio = Math.floor(Math.random() * 2) + 1 
+
+        if (aleatorio == 0) {
+            caraCruz = "Cara"
+        }else{
+            caraCruz = "Cruz"
+        }
+        return caraCruz
+    }
+
+    
+    function listaCarasOCruces() {
+        let array = []
+        for (let i = 0; i < 10; i++) {
+            array.push(caraOCruz())
+        }
+        return array
+    }
+
+    alert(listaCarasOCruces())
+
+
+</script>
