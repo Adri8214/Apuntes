@@ -10,19 +10,19 @@ import java.nio.file.Path;
 public class RutasProyecto {
     public static void main(String[] args) {
 
-        Path carpeta = Path.of("datos");
-        Path fichero = carpeta.resolve("clubes.txt");
-        Path copias = carpeta.resolve("copias");
+        Path datos = Path.of("datos");
+        Path fichero = datos.resolve("clubes.txt");
+        Path copias = datos.resolve("copias");
 
         System.out.println("--- RUTAS ABSOLUTAS --- ");
-        System.out.println("Ruta1: " + carpeta.toAbsolutePath());
+        System.out.println("Ruta1: " + datos.toAbsolutePath());
         System.out.println("Ruta2: " + fichero.toAbsolutePath());
         System.out.println("Ruta3: " + copias.toAbsolutePath());
 
         System.out.println();
 
         System.out.println("--- RUTAS RELATIVAS --- ");
-        System.out.println("Ruta1: " + carpeta);
+        System.out.println("Ruta1: " + datos);
         System.out.println("Ruta2: " + fichero);
         System.out.println("Ruta3: " + copias);
     }
