@@ -10,7 +10,6 @@ public class Ejercicio1 {
         int id;
 
         try {
-            
             List<String> videojuegos = Files.readAllLines(carpeta, StandardCharsets.UTF_8);
 
             for (int i = 1; i < videojuegos.size(); i++) {
