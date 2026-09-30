@@ -1,1 +1,6 @@
-Esto es un texto de prueba
+1;Granada CF;Granada
+2;Málaga CF;Málaga
+3;Cádiz CF;Cádiz
+4;Barcelona CF;Barcelona
+5;Linares CF;Linares6;Zaragoza CF;zARAGOZA
+7;Torreblascopedro CF;Torreblascopedro

@@ -12,7 +12,7 @@ public class RutasProyecto {
 
         Path datos = Path.of("datos");
         Path fichero = datos.resolve("clubes.txt");
-        Path copias = datos.resolve("copias");
+        Path copias = Path.of("copias");
 
         System.out.println("--- RUTAS ABSOLUTAS --- ");
         System.out.println("Ruta1: " + datos.toAbsolutePath());
