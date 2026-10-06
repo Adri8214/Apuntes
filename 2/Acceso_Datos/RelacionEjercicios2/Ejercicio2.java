@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -11,7 +10,7 @@ public class Ejercicio2 {
         Scanner entrada = new Scanner(System.in);
         Path carpeta = Path.of("datos", "alumnos.csv");
 
-        int id = 0;
+        int id;
         int idUsuario;
         String nombre;
         String curso;
@@ -42,13 +41,11 @@ public class Ejercicio2 {
                 } else {
                     System.out.println("Debe de contener 3 campos");
                 }
-                
             }
 
         } catch (IOException e) {
-            
-        }
 
+        }
         entrada.close();
     }
 }

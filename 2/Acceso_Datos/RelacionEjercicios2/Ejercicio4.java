@@ -44,7 +44,6 @@ public class Ejercicio4 {
                 }
             }
 
-
         } catch (IOException e) {
             System.out.println("No se ha podido encontrar el archivo " + e.getMessage());
         }
