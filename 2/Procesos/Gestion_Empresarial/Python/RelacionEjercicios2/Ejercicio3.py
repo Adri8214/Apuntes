@@ -1,10 +1,10 @@
-nombreProducto = input("Introduce el nombre del producto: ")
+nombre_producto = input("Introduce el nombre del producto: ")
 precio = int (input("Introduce el precio del producto: "))
 cantidad = int (input("Introduce la cantidad: "))
-porcentajeDescuento = int (input("Introduce el porcentaje de descuento: "))
+porcentaje_descuento = int (input("Introduce el porcentaje de descuento: "))
 
 subtotal = precio * cantidad
-descuento = subtotal * porcentajeDescuento / 100
+descuento = subtotal * porcentaje_descuento / 100
 total = subtotal - descuento
 
-print(f"Nombre: {nombreProducto}\nPrecio: {precio:.2f}\nCantidad: {cantidad:.2f}\nPorcentaje de descuento: {porcentajeDescuento}\nSubtotal: {subtotal:.2f}\nDescuento: {descuento:.2f}\nTotal: {total:.2f}")
+print(f"Nombre: {nombre_producto}\nPrecio: {precio:.2f}\nCantidad: {cantidad:.2f}\nPorcentaje de descuento: {porcentaje_descuento}\nSubtotal: {subtotal:.2f}\nDescuento: {descuento:.2f}\nTotal: {total:.2f}")
