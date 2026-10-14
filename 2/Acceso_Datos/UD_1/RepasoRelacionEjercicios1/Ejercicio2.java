@@ -4,11 +4,11 @@ import java.nio.file.Path;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        Path ruta = Path.of("datos1");    
-        Path ruta2 = Path.of("datos1/copias"); 
+        Path ruta = Path.of("datos");    
+        Path ruta2 = Path.of("datos/copias"); 
         
-        Path archivo1 = Path.of("datos1/clubes.txt");
-        Path archivo2 = Path.of("datos1/copias/respaldo.txt");
+        Path archivo1 = Path.of("datos/clubes.txt");
+        Path archivo2 = Path.of("datos/copias/respaldo.txt");
 
         try {
             Files.createDirectories(ruta);
