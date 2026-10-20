@@ -34,13 +34,15 @@ def mostrar_inventario (lista) :
         print(f"-{producto ['nombre']}: {producto['stock']} uds")
 
 
-def aniadir_producto (lista) :
-    nombre_producto = input("Nombre del producto: ")
-    try :
-        stock = int(input("Stock del producto: "))
-        lista.append({"nombre": nombre_producto, "stock": stock})
-    except ValueError :
-        print("Error: debes introducir un número")
+def anadir_producto(productos):
+    nombre_producto = input("Introduce el nombre del producto: ").strip()
+    try:
+        precio = float(input("Introduce el precio del producto: "))
+        stock = int(input("Introduce el stock del producto: "))
+        productos.append({"nombre": nombre_producto, "precio": precio, "stock": stock})
+        return f"Producto {nombre_producto} añadido"
+    except ValueError:
+        return "El precio y el stock tienen que ser números"
 
 def guardar_csv (lista) :
     with open("inventario.csv", "w", newline="", encoding="utf-8") as archivo :
@@ -88,3 +90,41 @@ if numero is None:
     print("Error: debes introducir un número entero.")
 else:
     print(f"Número introducido: {numero}")
+
+
+def formatear_producto(numero, producto):
+    return (
+        f"{numero}. {producto['nombre']} | "
+        f"{producto['precio']:.2f} EUR | Stock: {producto['stock']}"
+    )
+
+def listar_productos(productos):
+    if not productos:
+        return "No hay productos"
+    else:
+        lineas = []
+        for numero, producto in enumerate(productos, start=1):
+            lineas.append(formatear_producto(numero,producto))
+        return "\n".join(lineas)
+
+def convertir_cantidad(texto):
+    """Devuelve una cantidad positiva o None si el dato es inválido."""
+    try:
+        cantidad = int(texto)
+    except ValueError:
+        return None
+    return cantidad if cantidad > 0 else None
+
+def mostrar_pedido(pedido):
+    """Devuelve un listado de líneas; la impresión se hace en main()."""
+    if not pedido.lineas:
+        lineas = ["El pedido está vacío."]
+    else:
+        lineas = [f"Pedido de {pedido.cliente}:"]
+        for linea in pedido.lineas:
+            lineas.append(
+                f"{linea.producto.nombre} | {linea.cantidad} x "
+                f"{linea.producto.precio:.2f} = {linea.subtotal():.2f} EUR"
+            )
+    lineas.append(f"Total: {pedido.total():.2f} EUR")
+    return lineas
