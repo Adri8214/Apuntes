@@ -1,0 +1,5 @@
+numero,cliente,codigo_producto,cantidad,precio_unitario
+1,Marta Ruiz,CAN05,1,32.0
+1,Marta Ruiz,CAN06,2,6.75
+2,Javier Soto,CAN05,2,32.0
+2,Javier Soto,CAN04,1,12.9
